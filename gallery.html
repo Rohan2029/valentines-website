@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Memories</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Our Beautiful Memories ❤️</h1>
+    <div class="gallery-container" id="gallery"></div>
+
+    <script>
+        const gallery = document.getElementById("gallery");
+        const months = ["July", "August", "September", "October", "November", "December"];
+        const years = [2021, 2022, 2023, 2024, 2025];
+
+        let imageIndex = 1;
+        years.forEach(year => {
+            months.forEach(month => {
+                if (!(year === 2021 && month === "June") && !(year === 2025 && month === "March")) {
+                    const div = document.createElement("div");
+                    div.classList.add("gallery-item");
+
+                    const label = document.createElement("div");
+                    label.classList.add("image-label");
+                    label.textContent = `${month} ${year}`;
+                    
+                    const img = document.createElement("img");
+                    img.src = `images/img${imageIndex}.jpg`;
+                    img.alt = `${month} ${year}`;
+                    imageIndex++;
+
+                    div.appendChild(label);
+                    div.appendChild(img);
+                    gallery.appendChild(div);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
