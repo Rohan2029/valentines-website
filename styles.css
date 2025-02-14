@@ -8,25 +8,30 @@ body {
     padding: 0;
 }
 
-/* Home Page Image Styling */
+/* Home Page Styling */
 .home-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background-color: #f5e1da; /* Beige background */
+}
+
+.image-container {
+    background-color: #ffb6c1; /* Baby pink container */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .home-image {
     width: 80%;
     max-width: 600px;
     border-radius: 15px;
-    background-color: #ffb6c1; /* Soft pastel pink */
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* CTA Button */
+/* Centered CTA Button */
 .cta-button {
     background-color: black;
     color: white;
@@ -35,8 +40,9 @@ body {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    margin-top: 15px;
+    margin-top: 20px;
     transition: background-color 0.3s;
+    display: block;
 }
 
 .cta-button:hover {
@@ -56,6 +62,11 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     max-width: 400px;
     text-align: center;
+}
+
+/* Hide Next Button */
+.next-button {
+    display: none;
 }
 
 .options-container {
@@ -106,8 +117,10 @@ body {
     color: #555;
 }
 
+/* Fix Image Visibility */
 .gallery-item img {
     width: 100%;
     height: auto;
     border-radius: 8px;
+    display: block;
 }
