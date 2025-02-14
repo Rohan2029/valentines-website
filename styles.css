@@ -1,37 +1,48 @@
-/* General Styling */
+/* General Styles */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #FDF6F0; /* Soft Pastel Background */
+    background-color: #f5e6cc; /* Beige background */
+    font-family: 'Arial', sans-serif;
     text-align: center;
-    margin: 0;
-    padding: 0;
+    padding: 50px;
 }
 
 /* Home Section */
 .home {
-    margin-top: 50px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f8d7e3; /* Baby pink */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+/* Main Image */
 .main-image {
-    width: 50%;
-    border-radius: 20px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    border-radius: 15px;
+    margin-bottom: 20px;
 }
 
 /* CTA Button */
 .cta-button {
-    background-color: #FF8FAB;
+    background-color: #000; /* Black CTA */
     color: white;
     font-size: 18px;
-    padding: 12px 20px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
 }
 
 .cta-button:hover {
-    background-color: #FF6B8A;
+    background-color: #333;
 }
 
 /* Quiz Pop-up */
@@ -43,42 +54,35 @@ body {
     transform: translate(-50%, -50%);
     background: white;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Quiz Buttons */
 .quiz-box button {
-    display: block;
-    margin: 10px auto;
-    padding: 10px;
-    font-size: 16px;
-    background: #B5EAEA;
+    background-color: #000;
+    color: white;
     border: none;
-    border-radius: 8px;
+    padding: 10px 15px;
+    margin: 5px;
     cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
     transition: 0.3s;
 }
 
 .quiz-box button:hover {
-    background: #81D4FA;
+    background-color: #444;
 }
 
 /* Gallery */
 .gallery {
     display: none;
-    margin-top: 30px;
-}
-
-.image-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
-    justify-content: center;
-    padding: 20px;
+    margin-top: 40px;
 }
 
 .image-container img {
-    width: 100%;
-    border-radius: 15px;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+    width: 150px;
+    margin: 10px;
+    border-radius: 10px;
 }
