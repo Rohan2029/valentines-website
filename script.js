@@ -1,3 +1,4 @@
+// Quiz questions and answers
 const quizData = [
     { question: "Which of these has NOT been your nickname?", options: ["Ko", "Gruhenk", "Shrambo", "Sno"], correct: 2 },
     { question: "Which is my favourite cold coffee?", options: ["Vitos", "Amintiri", "Basil", "McD"], correct: 0 },
@@ -8,61 +9,58 @@ const quizData = [
     { question: "What is our age gap (in days)?", options: ["108", "115", "92", "142"], correct: 1 },
     { question: "Which is our favourite dosa?", options: ["Vidyarthi Bhavan", "Taaza Thindi", "Sagar Ratna", "Woodlands"], correct: 1 },
     { question: "Which number most represents us? Think closely", options: ["35", "2", "13", "44"], correct: 0 },
-    { question: "What movie are we watching today?", options: ["Sleepless in Seattle", "Love, Simon", "Barfi", "Hum Tum"], correct: [0, 1, 2, 3] }
+    { question: "What movie are we watching today?", options: ["Sleepless in Seattle", "Love, Simon", "Barfi", "Hum Tum"], correct: -1 } // All answers are correct
 ];
 
 let currentQuestionIndex = 0;
 
-function openQuiz() {
+// Start the quiz
+function startQuiz() {
+    currentQuestionIndex = 0;
+    showQuestion();
     document.getElementById("quizPopup").style.display = "block";
-    loadQuestion();
 }
 
-function loadQuestion() {
-    const container = document.getElementById("question-container");
-    container.innerHTML = ""; // Clear previous question
-
-    const q = quizData[currentQuestionIndex];
-
-    let questionText = document.createElement("h3");
-    questionText.innerText = q.question;
-    container.appendChild(questionText);
-
-    let buttonContainer = document.createElement("div");
-    buttonContainer.classList.add("options-container");
-
-    q.options.forEach((option, index) => {
-        let btn = document.createElement("button");
-        btn.innerText = option;
-        btn.classList.add("option-btn");
-        btn.onclick = () => checkAnswer(index);
-        buttonContainer.appendChild(btn);
-    });
-
-    container.appendChild(buttonContainer);
-}
-
-function checkAnswer(selectedIndex) {
-    let correctIndex = quizData[currentQuestionIndex].correct;
-
-    if (Array.isArray(correctIndex)) {
-        // Last question: all answers are correct
-        nextQuestion();
-    } else if (selectedIndex === correctIndex) {
-        nextQuestion();
-    } else {
-        alert("Incorrect answer! Try again from the beginning.");
-        currentQuestionIndex = 0; // Reset to first question
-        loadQuestion();
+// Show the current question
+function showQuestion() {
+    if (currentQuestionIndex >= quizData.length) {
+        window.open("gallery.html", "_blank"); // Open gallery in new tab
+        return;
     }
+
+    const questionData = quizData[currentQuestionIndex];
+    document.getElementById("question-text").innerText = questionData.question;
+
+    const optionsContainer = document.getElementById("options-container");
+    optionsContainer.innerHTML = "";
+
+    questionData.options.forEach((option, index) => {
+        const button = document.createElement("button");
+        button.innerText = option;
+        button.classList.add("option-button");
+
+        button.addEventListener("click", function() {
+            checkAnswer(index);
+        });
+
+        optionsContainer.appendChild(button);
+    });
 }
 
-function nextQuestion() {
-    currentQuestionIndex++;
+// Check answer and proceed
+function checkAnswer(selectedIndex) {
+    const questionData = quizData[currentQuestionIndex];
 
-    if (currentQuestionIndex < quizData.length) {
-        loadQuestion();
+    if (questionData.correct === -1 || selectedIndex === questionData.correct) {
+        currentQuestionIndex++;
+
+        if (currentQuestionIndex < quizData.length) {
+            showQuestion();
+        } else {
+            window.open("gallery.html", "_blank"); // Open gallery page in new tab
+        }
     } else {
-        window.open("gallery.html", "_blank"); // Open gallery page in a new tab
+        alert("Incorrect answer! Restarting quiz...");
+        startQuiz();
     }
 }
