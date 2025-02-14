@@ -80,3 +80,19 @@ h1 {
     padding: 5px 10px;
     border-radius: 5px;
 }
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.gallery-item {
+    text-align: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 8px;
+}
