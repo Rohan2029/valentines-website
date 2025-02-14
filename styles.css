@@ -16,6 +16,7 @@ body {
     justify-content: center;
     height: 100vh;
     background-color: #f5e1da; /* Beige background */
+    padding: 20px;
 }
 
 .image-container {
@@ -23,11 +24,13 @@ body {
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* Smaller image container */
+    text-align: center;
 }
 
+/* Smaller Home Image */
 .home-image {
-    width: 80%;
-    max-width: 600px;
+    width: 100%;
     border-radius: 15px;
 }
 
@@ -40,9 +43,10 @@ body {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 15px;
     transition: background-color 0.3s;
-    display: block;
+    display: inline-block;
+    text-align: center;
 }
 
 .cta-button:hover {
@@ -66,9 +70,10 @@ body {
 
 /* Hide Next Button */
 .next-button {
-    display: none;
+    display: none !important;
 }
 
+/* Quiz Options Styling */
 .options-container {
     display: flex;
     flex-direction: column;
