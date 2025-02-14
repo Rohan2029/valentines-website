@@ -8,35 +8,29 @@
 </head>
 <body>
     <h1>Our Beautiful Memories ❤️</h1>
-    <div class="gallery-container" id="gallery"></div>
-
+    <div class="gallery">
+        <!-- Images will be generated dynamically -->
+    </div>
     <script>
-        const gallery = document.getElementById("gallery");
-        const months = ["July", "August", "September", "October", "November", "December"];
-        const years = [2021, 2022, 2023, 2024, 2025];
-
-        let imageIndex = 1;
-        years.forEach(year => {
-            months.forEach(month => {
-                if (!(year === 2021 && month === "June") && !(year === 2025 && month === "March")) {
-                    const div = document.createElement("div");
-                    div.classList.add("gallery-item");
-
-                    const label = document.createElement("div");
-                    label.classList.add("image-label");
-                    label.textContent = `${month} ${year}`;
-                    
-                    const img = document.createElement("img");
-                    img.src = `images/img${imageIndex}.jpg`;
-                    img.alt = `${month} ${year}`;
-                    imageIndex++;
-
-                    div.appendChild(label);
-                    div.appendChild(img);
-                    gallery.appendChild(div);
-                }
-            });
-        });
+        const gallery = document.querySelector(".gallery");
+        const months = [
+            "July", "August", "September", "October", "November", "December",
+            "January", "February", "March", "April", "May", "June"
+        ];
+        let year = 2021;
+        let monthIndex = 0;
+        for (let i = 1; i <= 32; i++) {
+            if (i > 12) {
+                year++;
+                monthIndex = 0;
+            }
+            let imgDiv = document.createElement("div");
+            imgDiv.classList.add("gallery-item");
+            imgDiv.innerHTML = `<p>${months[monthIndex]} ${year}</p>
+                                <img src="images/img${i}.jpg" alt="Memory ${i}">`;
+            gallery.appendChild(imgDiv);
+            monthIndex++;
+        }
     </script>
 </body>
 </html>
