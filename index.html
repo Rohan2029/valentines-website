@@ -10,24 +10,31 @@
 
     <!-- Home Page -->
     <div class="home-container">
-        <h1 class="page-title">Happy Valentine's Day, My Shrey! ♥️</h1>
+        <h1 class="page-title">Happy Valentine's Day, My Love! ❤️</h1>
         <p class="subtitle">A special journey through our memories together.</p>
         
         <div class="image-container">
             <img src="images/home_image.JPG" alt="Our Memory" class="home-image">
         </div>
 
-        <button class="cta-button" onclick="startQuiz()">Take Quiz</button>
+        <button class="cta-button" id="startQuiz">Take Quiz</button>
     </div>
 
     <!-- Quiz Popup -->
     <div class="quiz-popup" id="quizPopup">
-        <h2>Quiz Time! Answer All 10 Correctly for a Surprise 💖</h2>
+        <h2>Quiz Time! Answer All 10 Correctly for a Surprise💖</h2>
         <p id="question-text">Question will appear here</p>
         <div class="options-container" id="options-container"></div>
     </div>
 
     <script src="script.js"></script>
+
+    <script>
+        // Ensure "Take Quiz" button works
+        document.getElementById("startQuiz").addEventListener("click", function() {
+            startQuiz();
+        });
+    </script>
 
 </body>
 </html>
