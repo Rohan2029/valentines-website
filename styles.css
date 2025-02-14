@@ -96,3 +96,29 @@ h1 {
     width: 100%;
     border-radius: 8px;
 }
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.option-btn {
+    background-color: #ffb6c1; /* Light pastel pink */
+    color: black;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    width: 100%;
+}
+
+.option-btn:hover {
+    background-color: #ff8fab; /* Slightly darker pink */
+    color: white;
+}
+
