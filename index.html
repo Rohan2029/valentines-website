@@ -1,85 +1,49 @@
-/* General Styling */
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #FDF6F0; /* Soft Pastel Background */
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Special</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-/* Home Section */
-.home {
-    margin-top: 50px;
-}
+    <!-- Home Section -->
+    <div class="home">
+        <h1>Happy Valentine's Day, My Love! ❤️</h1>
+        <img src="your-image.jpg" alt="Us together" class="main-image">
+        <button class="cta-button" onclick="openQuiz()">Take Quiz</button>
+    </div>
 
-.main-image {
-    width: 50%;
-    border-radius: 20px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
+    <!-- Quiz Pop-up -->
+    <div class="quiz-popup" id="quizPopup">
+        <div class="quiz-box">
+            <h2>What is my favorite color?</h2>
+            <button onclick="checkAnswer('red')">Red</button>
+            <button onclick="checkAnswer('blue')">Blue</button>
+            <button onclick="checkAnswer('green')">Green</button>
+            <button onclick="checkAnswer('white')">White</button>
+            <p id="quizMessage"></p>
+        </div>
+    </div>
 
-/* CTA Button */
-.cta-button {
-    background-color: #FF8FAB;
-    color: white;
-    font-size: 18px;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-}
+    <!-- Gallery Section (Hidden Initially) -->
+    <div class="gallery" id="gallery">
+        <h2>Our Beautiful Memories ❤️</h2>
+        <div class="image-container">
+            <!-- Add images from July 2021 onward -->
+            <img src="image1.jpg" alt="July 2021">
+            <img src="image2.jpg" alt="August 2021">
+            <img src="image3.jpg" alt="September 2021">
+            <img src="image4.jpg" alt="October 2021">
+            <img src="image5.jpg" alt="November 2021">
+            <img src="image6.jpg" alt="December 2021">
+            <img src="image7.jpg" alt="January 2022">
+        </div>
+    </div>
 
-.cta-button:hover {
-    background-color: #FF6B8A;
-}
+    <script src="script.js"></script>
+</body>
+</html>
 
-/* Quiz Pop-up */
-.quiz-popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.quiz-box button {
-    display: block;
-    margin: 10px auto;
-    padding: 10px;
-    font-size: 16px;
-    background: #B5EAEA;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.quiz-box button:hover {
-    background: #81D4FA;
-}
-
-/* Gallery */
-.gallery {
-    display: none;
-    margin-top: 30px;
-}
-
-.image-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
-    justify-content: center;
-    padding: 20px;
-}
-
-.image-container img {
-    width: 100%;
-    border-radius: 15px;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
-}
 
