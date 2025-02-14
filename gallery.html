@@ -7,30 +7,28 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>You and Me, since we became "We" ♥️</h1>
-    <div class="gallery">
-        <!-- Images will be generated dynamically -->
-    </div>
-    <script>
-        const gallery = document.querySelector(".gallery");
-        const months = [
-            "July", "August", "September", "October", "November", "December",
-            "January", "February", "March", "April", "May", "June"
-        ];
-        let year = 2021;
-        let monthIndex = 0;
-        for (let i = 1; i <= 32; i++) {
-            if (i > 12) {
-                year++;
-                monthIndex = 0;
+    <h1>Our Journey Through Time ❤️</h1>
+    <div class="gallery-grid">
+        <script>
+            const galleryContainer = document.querySelector('.gallery-grid');
+            const startDate = new Date(2021, 6); // July 2021
+            const endDate = new Date(2025, 1); // Feb 2025
+            let currentDate = new Date(startDate);
+
+            let count = 1;
+            while (currentDate <= endDate) {
+                let month = currentDate.toLocaleString('default', { month: 'long' });
+                let year = currentDate.getFullYear();
+                galleryContainer.innerHTML += `
+                    <div class="gallery-item">
+                        <p>${month} ${year}</p>
+                        <img src="images/memory${count}.jpg" alt="Memory ${count}">
+                    </div>
+                `;
+                currentDate.setMonth(currentDate.getMonth() + 1);
+                count++;
             }
-            let imgDiv = document.createElement("div");
-            imgDiv.classList.add("gallery-item");
-            imgDiv.innerHTML = `<p>${months[monthIndex]} ${year}</p>
-                                <img src="images/img${i}.jpeg" alt="Memory ${i}">`;
-            gallery.appendChild(imgDiv);
-            monthIndex++;
-        }
-    </script>
+        </script>
+    </div>
 </body>
 </html>
