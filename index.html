@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Special</title>
+    <title>Happy Valentine's Day, My Shrey ♥️</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Home Section -->
-    <div class="home">
-        <h1>Happy Valentine's Day, My Love! ❤️</h1>
-        <img src="images/home_image.JPG" alt="Us together" class="main-image">
-        <button class="cta-button" onclick="openQuiz()">Take Quiz</button>
+
+    <!-- Home Page -->
+    <div class="home-container">
+        <div class="image-container">
+            <img src="images/home_image.JPG" alt="Us" class="home-image">
+        </div>
+        <button class="cta-button" onclick="startQuiz()">Take Quiz</button>
     </div>
 
-    <!-- Quiz Pop-up -->
+    <!-- Quiz Popup -->
     <div class="quiz-popup" id="quizPopup">
-        <div class="quiz-box">
-            <h2>Answer All 10 Questions Correctly</h2>
-            <div id="question-container"></div>
-            <button class="next-btn" onclick="nextQuestion()">Next</button>
-            <p id="quizMessage"></p>
-        </div>
+        <h2>Answer all 10 Questions Correctly for a Surprise! 💖</h2>
+        <p id="question-text">Question will appear here</p>
+        <div class="options-container" id="options-container"></div>
     </div>
 
     <script src="script.js"></script>
+
 </body>
 </html>
