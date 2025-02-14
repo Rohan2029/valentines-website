@@ -7,18 +7,19 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Home Section -->
     <div class="home">
         <h1>Happy Valentine's Day, My Love! ❤️</h1>
         <img src="images/home_image.JPG" alt="Us together" class="main-image">
         <button class="cta-button" onclick="openQuiz()">Take Quiz</button>
     </div>
 
-    <!-- Quiz Popup -->
+    <!-- Quiz Pop-up -->
     <div class="quiz-popup" id="quizPopup">
         <div class="quiz-box">
-            <h2>Answer all questions correctly to unlock memories! 💖</h2>
+            <h2>Answer All 10 Questions Correctly</h2>
             <div id="question-container"></div>
-            <button onclick="nextQuestion()">Next</button>
+            <button class="next-btn" onclick="nextQuestion()">Next</button>
             <p id="quizMessage"></p>
         </div>
     </div>
