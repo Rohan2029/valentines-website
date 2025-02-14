@@ -28,12 +28,18 @@ function loadQuestion() {
     questionText.innerText = q.question;
     container.appendChild(questionText);
 
+    let buttonContainer = document.createElement("div");
+    buttonContainer.classList.add("options-container");
+
     q.options.forEach((option, index) => {
         let btn = document.createElement("button");
         btn.innerText = option;
+        btn.classList.add("option-btn");
         btn.onclick = () => checkAnswer(index);
-        container.appendChild(btn);
+        buttonContainer.appendChild(btn);
     });
+
+    container.appendChild(buttonContainer);
 }
 
 function checkAnswer(selectedIndex) {
